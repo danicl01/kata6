@@ -32,5 +32,21 @@ public class CarTest {
         assertEquals(car.getSpeedLimit(), car.getSpeed());
     }
 
+    @Test
+    public void when_braking_the_car_the_speed_should_be_0() {
+        Car car = new Car();
+        car.startUp();
+        car.speedUp(30);
+        car.brake(46);
+        assertEquals(0, car.getSpeed());
+    }
+
+    @Test
+    public void the_car_must_not_move_if_engine_is_off() {
+        Car car = new Car();
+        car.speedUp(100);
+        assertEquals(0, car.getSpeed());
+    }
+
 
 }

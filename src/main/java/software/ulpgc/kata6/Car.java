@@ -23,11 +23,16 @@ public class Car {
     }
 
     public void speedUp(int amount) {
-        speed += amount;
+        if(engineStatus.equals("on")) speed += amount;
         if (speed > speedLimit) speed = speedLimit;
     }
 
     public int getSpeedLimit() {
         return speedLimit;
+    }
+
+    public void brake(int amount) {
+        speed -= amount;
+        if (speed < 0) speed = 0;
     }
 }
